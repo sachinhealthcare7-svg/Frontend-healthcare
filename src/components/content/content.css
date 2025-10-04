@@ -1,0 +1,179 @@
+/* === Section Wrapper === */
+.health-section {
+  /* background: #d7e0e7; */
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  padding-bottom: 100px;
+  overflow: hidden;
+    background-color: #d7e0e7;
+  
+}
+
+/* === SVG Wave Wrapper === */
+.hero-wave2 {
+  position: relative;
+  z-index: 10;
+}
+
+/* === SVG Wave === */
+.wave-svg2 {
+  display: block;
+  width: 100%;
+  height: 200px;
+  transform: scaleY(-1);
+  transform-origin: center;
+  z-index:105;
+}
+
+/* === Health Benefits Container === */
+.health-benefits-container {
+  position: relative;
+  background: #ffffff;
+
+  padding: 80px 40px 120px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: -120px auto 0 auto;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0px 0px 40px rgba(0, 84, 231, 0.15);
+  z-index:2;
+}
+
+/* === Titles === */
+.health-benefits-container h1 {
+  font-size: 46px;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+}
+
+.health-benefits-container .subtitle {
+  font-size: 22px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #222;
+}
+
+/* === Colored Text === */
+.blue {
+  color: #0038a8;
+}
+
+.green {
+  color: #20c997;
+}
+
+/* === Circular Layout === */
+.circle-layout {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+/* === Center Icon === */
+.center-icon {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.center-icon img {
+  width: 90px;
+}
+
+/* === Nutrient Boxes === */
+.nutrient-box {
+  position: absolute;
+  width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  background: transparent;
+}
+
+/* === Text Styling for Each Box === */
+.nutrient-box h3 {
+  color: #0038a8;
+  font-size: 22px;
+  margin: 10px 0 0;
+}
+
+.nutrient-box h4 {
+  color: #20c997;
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.nutrient-box p {
+  font-size: 13px;
+  color: black;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* === Icons === */
+.nutrient-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* === Circle Positioning (Adjusted) === */
+.top-left {
+  top: 10%;
+  left: 10%;
+}
+
+.middle-left {
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+}
+
+.bottom-center {
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.middle-right {
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+}
+
+.top-right {
+  top: 10%;
+  right: 10%;
+}
+
+/* === Responsive (Mobile Support) === */
+@media (max-width: 768px) {
+  .circle-layout {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center-icon {
+    position: static;
+    margin: 30px auto;
+  }
+
+  .nutrient-box {
+    position: static;
+    margin: 20px auto;
+  }
+}
