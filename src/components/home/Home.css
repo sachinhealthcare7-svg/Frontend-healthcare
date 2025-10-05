@@ -1,12 +1,14 @@
 /* src/components/home/Home.css */
 
+/* Section Background */
 .hero-section1 {
   background-color: #d7e0e7;
   padding: 40px 0;
-
-
+  position: relative;
+  z-index: 1;
 }
 
+/* Main Hero Section */
 .hero-section {
   position: relative;
   background: #ffffff;
@@ -17,8 +19,10 @@
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   box-shadow: 0px 0px 40px rgba(0, 84, 231, 0.15);
+  z-index: 2;
 }
 
+/* Hero Content Layout */
 .hero-content {
   display: flex;
   justify-content: center;
@@ -27,7 +31,7 @@
   flex-wrap: wrap;
 }
 
-/* Image side */
+/* Image Side */
 .hero-image {
   flex: 1;
 }
@@ -38,21 +42,23 @@
   height: auto;
 }
 
-/* Text side */
+/* Text Side */
 .hero-text {
   flex: 1;
   min-width: 300px;
+  position: relative;
+  z-index: 5; /* Ensures content including buttons is above SVG */
 }
 
 .hero-text h1 {
-  font-size: clamp(2rem, 4vw, 3.5rem); /* Responsive */
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: bold;
   color: #111;
   margin-bottom: 20px;
 }
 
 .subheading {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem); /* Responsive */
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   margin-bottom: 10px;
   color: #333;
 }
@@ -62,37 +68,76 @@
 }
 
 .hero-text p {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Responsive */
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: #444;
   line-height: 1.6;
   margin-bottom: 30px;
   max-width: 500px;
 }
 
+/* Button Group Container */
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+/* Shared Button Styles */
 .hero-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: #00008b;
-  color: white;
-  padding: 12px 28px;
+  color: white !important;
+  padding: 12px 24px;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem); /* Responsive */
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   box-shadow: 0 5px 15px rgba(0, 0, 139, 0.3);
   transition: background 0.3s;
+  border: none;
+  position: relative;
+  z-index: 5;
+  /* margin-top: -100px; */
 }
 
 .hero-button:hover {
   background-color: #0000cc;
 }
 
+/* Contact Button Hover */
+.contact-button:hover {
+  background-color: #0000cc;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  background-color: #25D366;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5b;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* SVG Wave Styling */
 .hero-wave1 {
   position: relative;
   width: 100%;
   margin-top: -200px;
   overflow: hidden;
   line-height: 0;
-  z-index: 2;
+  z-index: 1; /* Behind everything else */
 }
 
 .wave-svg1 {
@@ -101,7 +146,7 @@
   height: 250px;
 }
 
-/* Optional: mobile tweaks */
+/* Responsive Styles */
 @media (max-width: 600px) {
   .hero-content {
     flex-direction: column;
@@ -111,5 +156,182 @@
   .hero-image img {
     padding-left: 0;
     width: 90%;
+  }
+
+  .button-group {
+    justify-content: center;
+  }
+
+  .hero-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* src/components/home/Home.css */
+
+/* Section Background */
+.hero-section1 {
+  background-color: #d7e0e7;
+  padding: 40px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Main Hero Section */
+.hero-section {
+  position: relative;
+  background: #ffffff;
+  padding: 80px 40px 120px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: 0px 0px 40px rgba(0, 84, 231, 0.15);
+  z-index: 2;
+}
+
+/* Hero Content Layout */
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Image Side */
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 70%;
+  padding-left: 40px;
+  height: auto;
+}
+
+/* Text Side */
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  z-index: 5; /* Ensures content including buttons is above SVG */
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.subheading {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.highlight {
+  color: #00008b;
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+/* Button Group Container */
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+/* Shared Button Styles */
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00008b;
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  box-shadow: 0 5px 15px rgba(0, 0, 139, 0.3);
+  transition: background 0.3s;
+  border: none;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-button:hover {
+  background-color: #0000cc;
+}
+
+/* Contact Button Hover */
+.contact-button:hover {
+  background-color: #0000cc;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  background-color: #25D366;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5b;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* SVG Wave Styling */
+.hero-wave1 {
+  position: relative;
+  width: 100%;
+  margin-top: -140px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1; /* Behind everything else */
+}
+
+.wave-svg1 {
+  display: block;
+  width: 100%;
+  height: 250px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    padding-left: 0;
+    width: 90%;
+  }
+
+  .button-group {
+    justify-content: center;
+  }
+
+  .hero-button {
+    width: 100%;
+    justify-content: center;
   }
 }
