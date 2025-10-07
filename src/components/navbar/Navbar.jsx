@@ -26,7 +26,7 @@ const Navbar = () => {
         <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
         <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
         <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
-        <li><Link to="/Vedio" onClick={() => setIsOpen(false)}>Diseases</Link></li>
+        <li><Link to="/Vedio" onClick={() => setIsOpen(false)}>Treatment</Link></li>
       </ul>
 
       {/* Right: Book Now button */}

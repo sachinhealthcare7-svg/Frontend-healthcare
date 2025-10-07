@@ -7,6 +7,7 @@ import About from '../about/About';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Content from '../content/Content';
+import Vedio from '../vedio/Vedio';
 
 const Home = () => {
   useEffect(() => {
@@ -101,6 +102,7 @@ const Home = () => {
       {/* Other Components */}
       <About />
       <Content />
+      <Vedio />
     </>
   );
 };
