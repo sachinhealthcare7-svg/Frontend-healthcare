@@ -21,7 +21,7 @@ const Vedio = () => {
             style={{
               width: '320px',
               position: 'relative',
-              paddingBottom: '56.25%',
+              paddingBottom: '18.25%',
               height: 0,
               overflow: 'hidden'
             }}

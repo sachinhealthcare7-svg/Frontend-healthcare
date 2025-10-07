@@ -1,5 +1,3 @@
-// src/components/home/Home.jsx
-
 import React, { useEffect } from 'react';
 import './Home.css';
 import { Link } from "react-router-dom";
@@ -8,6 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Content from '../content/Content';
 import Vedio from '../vedio/Vedio';
+import Contact from "../contact/Contact"
 
 const Home = () => {
   useEffect(() => {
@@ -103,6 +102,7 @@ const Home = () => {
       <About />
       <Content />
       <Vedio />
+      <Contact />
     </>
   );
 };

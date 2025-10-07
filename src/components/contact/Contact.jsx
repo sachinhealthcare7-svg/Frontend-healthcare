@@ -45,7 +45,7 @@ const Contact = () => {
   };
   return (
     <div className="contact-section">
-      <h2 className="contact-title">Contact Us</h2>
+      <h1 className="contact-title" style={{fontSize:"42px"}}>  Contact Us</h1>
       <div className="contact-container">
         {/* LEFT SIDE - Contact Info */}
         <div className="contact-info">
