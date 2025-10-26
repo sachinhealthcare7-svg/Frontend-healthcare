@@ -8,6 +8,7 @@ import Contact from './components/contact/Contact.jsx';
 import Footer from "./components/footer/Footer.jsx"
 import Vedio from './components/vedio/Vedio.jsx';
 
+
 const App = () => {
   return (
     <Router> 
@@ -18,7 +19,7 @@ const App = () => {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Vedio" element={<Vedio />} />
       </Routes>
-      
+  
       <Footer />
     </Router>
   );

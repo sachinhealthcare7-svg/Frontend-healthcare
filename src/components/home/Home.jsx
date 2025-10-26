@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 import Content from '../content/Content';
 import Vedio from '../vedio/Vedio';
 import Contact from "../contact/Contact"
-
+import Format from '../Format';
 const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 3000 });
@@ -102,6 +102,7 @@ const Home = () => {
       <About />
       <Content />
       <Vedio />
+      <Format />
       <Contact />
     </>
   );
