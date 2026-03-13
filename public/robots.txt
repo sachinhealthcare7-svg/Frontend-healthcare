@@ -1,3 +1,143 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for Dr. S.K Sachin Health Care Website
+# https://www.drsksachinhealthcare.com
+
+# ---------------------------------------------------------------------
+# MAIN RULES
+# ---------------------------------------------------------------------
+
+# Allow all crawlers full access (since it's a public website)
 User-agent: *
 Disallow:
+
+# ---------------------------------------------------------------------
+# SPECIFIC CRAWLER OPTIMIZATIONS
+# ---------------------------------------------------------------------
+
+# Googlebot (Google Search)
+User-agent: Googlebot
+Disallow:
+Allow: /
+Crawl-delay: 1
+
+# Googlebot-Image (Google Image Search)
+User-agent: Googlebot-Image
+Disallow:
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+
+# Googlebot-News (Google News)
+User-agent: Googlebot-News
+Disallow:
+
+# Googlebot-Video (Google Video)
+User-agent: Googlebot-Video
+Disallow:
+
+# Bingbot (Microsoft Bing)
+User-agent: bingbot
+Disallow:
+Crawl-delay: 1
+
+# Slurp (Yahoo)
+User-agent: Slurp
+Disallow:
+Crawl-delay: 2
+
+# Baiduspider (Baidu - Chinese search engine)
+User-agent: Baiduspider
+Disallow:
+Crawl-delay: 2
+
+# Yandex (Russian search engine)
+User-agent: Yandex
+Disallow:
+Crawl-delay: 2
+Host: https://www.drsksachinhealthcare.com
+Clean-param: utm_source&utm_medium&utm_campaign
+
+# DuckDuckBot (DuckDuckGo)
+User-agent: DuckDuckBot
+Disallow:
+Crawl-delay: 1
+
+# Facebook External Hit
+User-agent: facebookexternalhit
+Disallow:
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+
+# Twitterbot
+User-agent: Twitterbot
+Disallow:
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+
+# WhatsApp
+User-agent: WhatsApp
+Disallow:
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+
+# ---------------------------------------------------------------------
+# DISALLOW PATHS (Private/Admin areas - if any)
+# ---------------------------------------------------------------------
+
+# Block access to admin and private areas (if applicable)
+# Uncomment these if you have such directories
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+# Disallow: /includes/
+# Disallow: /config/
+# Disallow: /backup/
+# Disallow: /database/
+
+# Block access to certain file types (if needed)
+# User-agent: *
+# Disallow: /*.log$
+# Disallow: /*.bak$
+# Disallow: /*.old$
+# Disallow: /*.sql$
+# Disallow: /*.zip$
+# Disallow: /*.tar$
+# Disallow: /*.gz$
+
+# ---------------------------------------------------------------------
+# CRAWL DELAY FOR ALL BOTS
+# ---------------------------------------------------------------------
+
+# Recommended crawl delay for all bots (helps server performance)
+User-agent: *
+Crawl-delay: 2
+
+# ---------------------------------------------------------------------
+# SITEMAP LOCATION
+# ---------------------------------------------------------------------
+
+Sitemap: https://www.drsksachinhealthcare.com/sitemap.xml
+Sitemap: https://www.drsksachinhealthcare.com/sitemap-index.xml
+
+# ---------------------------------------------------------------------
+# HOST (For Yandex specifically)
+# ---------------------------------------------------------------------
+
+Host: https://www.drsksachinhealthcare.com
+
+# ---------------------------------------------------------------------
+# COMMENTS FOR REFERENCE
+# ---------------------------------------------------------------------
+
+# This robots.txt file allows all search engines to crawl the entire website
+# while providing specific optimizations for different bots.
+# Last updated: March 2026
+# For questions, contact: contact@drsksachinhealthcare.com
