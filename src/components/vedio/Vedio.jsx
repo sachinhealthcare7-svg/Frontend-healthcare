@@ -162,7 +162,7 @@ const Vedio = () => {
           </div>
 
           {/* Video Stats */}
-          <div className="video-stats" data-aos="fade-up">
+          {/* <div className="video-stats" data-aos="fade-up">
             <div className="stat-item">
               <span className="stat-number">10+</span>
               <span className="stat-label">Educational Videos</span>
@@ -175,7 +175,7 @@ const Vedio = () => {
               <span className="stat-number">5K+</span>
               <span className="stat-label">Subscribers</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Video Grid */}
           <div className="video-grid" data-aos="fade-up">
