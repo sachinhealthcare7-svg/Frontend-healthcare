@@ -14,11 +14,48 @@ const Vedio = () => {
 
   const videoData = [
     {
+      id: "QczPx4J9QyU",
+      title: "Ayurvedic Treatment for Sexual Health Problems | Dr. S.K Sachin",
+      description: "Expert advice on common sexual health issues and their Ayurvedic solutions. Learn about natural remedies and treatments.",
+      duration: "10:30",
+      category: "Sexual Health"
+    },
+    {
+      id: "MrYpPg-yPZ4",
+      title: "Piles (Bawasir) Treatment | Ayurvedic Non-Surgical Solutions",
+      description: "Complete guide to piles treatment without surgery using Ayurvedic methods. Effective remedies for hemorrhoids.",
+      duration: "8:45",
+      category: "Piles Treatment"
+    },
+    {
+      id: "-Ie1oe5OyJc",
+      title: "Skin Diseases & Ayurvedic Treatment | Acne, Psoriasis, Eczema",
+      description: "Natural Ayurvedic treatments for various skin conditions including acne, psoriasis, and eczema.",
+      duration: "12:15",
+      category: "Skin Care"
+    },
+    {
       id: "t8T42ZycpGM",
       title: "Understanding Sexual Health Problems & Ayurvedic Solutions",
       description: "Dr. S.K Sachin explains common sexual health issues and their Ayurvedic treatments. Learn about premature ejaculation, ED, and natural remedies.",
       duration: "5:30",
       category: "Sexual Health"
+    },
+    {
+      id: "OddK06DelGg",
+      title: "Quick Ayurvedic Tips for Digestive Health | Short Video",
+      description: "Short and effective Ayurvedic tips for better digestive health and metabolism.",
+      duration: "1:45",
+      category: "Digestive Health",
+      isShort: true
+    },
+    {
+      id: "Ao5q4GBHUCY",
+      title: "Sexual Health Tips | Quick Ayurvedic Advice",
+      description: "Quick Ayurvedic tips for maintaining good sexual health and vitality.",
+      duration: "1:30",
+      category: "Sexual Health",
+      isShort: true
     },
     {
       id: "IRdnpRiEUi8",
@@ -47,7 +84,7 @@ const Vedio = () => {
       description: "Learn about digestive disorders and their Ayurvedic solutions. Tips for better gut health and metabolism.",
       duration: "4:20",
       category: "Digestive Health"
-    },
+    }
   ];
 
   const openVideoModal = (index) => {
@@ -58,6 +95,14 @@ const Vedio = () => {
   const closeVideoModal = () => {
     setActiveVideo(null);
     setIsPlaying(false);
+  };
+
+  // Function to get YouTube thumbnail with fallback
+  const getThumbnailUrl = (videoId, isShort) => {
+    if (isShort) {
+      return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; // Shorts work better with hqdefault
+    }
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   };
 
   // Structured data for VideoGallery
@@ -71,7 +116,7 @@ const Vedio = () => {
       "position": index + 1,
       "name": video.title,
       "description": video.description,
-      "thumbnailUrl": `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`,
+      "thumbnailUrl": getThumbnailUrl(video.id, video.isShort),
       "uploadDate": "2024-01-01",
       "duration": video.duration,
       "contentUrl": `https://www.youtube.com/watch?v=${video.id}`,
@@ -89,7 +134,7 @@ const Vedio = () => {
         {/* Open Graph tags */}
         <meta property="og:title" content="Dr. S.K Sachin - Ayurvedic Treatment Video Gallery" />
         <meta property="og:description" content="Expert videos on sexual health, piles treatment, skin diseases & Ayurvedic remedies" />
-        <meta property="og:image" content={`https://img.youtube.com/vi/${videoData[0].id}/maxresdefault.jpg`} />
+        <meta property="og:image" content={getThumbnailUrl(videoData[0].id, videoData[0].isShort)} />
         <meta property="og:url" content="https://yourclinicwebsite.com/videos" />
         
         {/* Canonical URL */}
@@ -119,7 +164,7 @@ const Vedio = () => {
           {/* Video Stats */}
           <div className="video-stats" data-aos="fade-up">
             <div className="stat-item">
-              <span className="stat-number">15+</span>
+              <span className="stat-number">10+</span>
               <span className="stat-label">Educational Videos</span>
             </div>
             <div className="stat-item">
@@ -137,7 +182,7 @@ const Vedio = () => {
             {videoData.map((video, index) => (
               <div 
                 key={index} 
-                className="video-card"
+                className={`video-card ${video.isShort ? 'video-short' : ''}`}
                 onClick={() => openVideoModal(index)}
                 role="button"
                 tabIndex={0}
@@ -146,7 +191,7 @@ const Vedio = () => {
               >
                 <div className="video-thumbnail-wrapper">
                   <img
-                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                    src={getThumbnailUrl(video.id, video.isShort)}
                     alt={video.title}
                     className="video-thumbnail"
                     loading="lazy"
@@ -163,6 +208,9 @@ const Vedio = () => {
                   </div>
                   <span className="video-duration">{video.duration}</span>
                   <span className="video-category">{video.category}</span>
+                  {video.isShort && (
+                    <span className="video-badge-short">SHORT</span>
+                  )}
                 </div>
                 
                 <div className="video-info">
@@ -176,7 +224,7 @@ const Vedio = () => {
                       </svg>
                       15K+ views
                     </span>
-                    <span className="video-date">Updated 2024</span>
+                    <span className="video-date">2024</span>
                   </div>
                 </div>
               </div>
@@ -247,6 +295,9 @@ const Vedio = () => {
                 <div className="modal-meta">
                   <span className="modal-category">{videoData[activeVideo].category}</span>
                   <span className="modal-duration">{videoData[activeVideo].duration}</span>
+                  {videoData[activeVideo].isShort && (
+                    <span className="modal-short-badge">YouTube Short</span>
+                  )}
                 </div>
               </div>
             </div>
